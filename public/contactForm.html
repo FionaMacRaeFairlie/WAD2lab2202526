@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="container">
+      <h1>Contact Form</h1>
+      <form id="contactForm" action="/handleform" method="POST">
+        <label> Name: </label>
+        <input type="text" name="name" id="name" required />
+        <br /><br />
+
+        <label>
+          Email:
+          <input type="email" name="email" required />
+        </label>
+        <br /><br />
+        <label>
+          Mobile Number:
+          <input type="tel" name="phone" required />
+        </label>
+        <br /><br />
+
+        <label>
+          Newsletter:
+          <select name="newsletter">
+            <option value="subscribe">Subscribe</option>
+            <option value="unsubscribe">Unsubscribe</option>
+          </select>
+        </label>
+        <br /><br />
+        <label for="message"
+          >Enter your message here:
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            style="width: 100%; resize: vertical"
+            placeholder="Type your message here..."
+          ></textarea>
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <!-- <h2>Server Response</h2>
+    <pre id="result"></pre>
+
+    <script type="module">
+      const form = document.getElementById("contactForm");
+      const result = document.getElementById("result");
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+        const payload = Object.fromEntries(formData.entries());
+
+        const response = await fetch("/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        const data = await response.json();
+        result.textContent = JSON.stringify(data, null, 2);
+      });
+    </script> -->
+  </body>
+</html>
